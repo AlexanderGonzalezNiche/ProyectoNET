@@ -18,7 +18,7 @@ namespace Torneo
 
         //constructor por defecto
         public Usuario() { }
-        //constructor Comunakakkaakaaka
+        //constructor Comun
         public Usuario(string nombre,string apellido,string nomusuario,string pass,string ciudad,List<Equipo> Equifavoritos,List<Partido> parevaluados)
         {
             Nombre = nombre;
