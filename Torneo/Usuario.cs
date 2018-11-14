@@ -16,7 +16,9 @@ namespace Torneo
         public List<Equipo> EquiposFavoritos { get; set; }
         public List<Partido> PartidosEvaluados { get; set; }
 
+        //constructor por defecto
         public Usuario() { }
+        //constructor Comun
         public Usuario(string nombre,string apellido,string nomusuario,string pass,string ciudad,List<Equipo> Equifavoritos,List<Partido> parevaluados)
         {
             Nombre = nombre;
