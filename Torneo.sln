@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torneo_Clases", "Torneo\Torneo_Clases.csproj", "{ACA93527-9171-4785-BCFD-A5A4197A03E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "..\winform\WindowsFormsApp1\WindowsFormsApp1.csproj", "{EAAC5FBF-9F16-47A6-A08E-9253970D03BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ACA93527-9171-4785-BCFD-A5A4197A03E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACA93527-9171-4785-BCFD-A5A4197A03E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACA93527-9171-4785-BCFD-A5A4197A03E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAAC5FBF-9F16-47A6-A08E-9253970D03BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAAC5FBF-9F16-47A6-A08E-9253970D03BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAAC5FBF-9F16-47A6-A08E-9253970D03BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAAC5FBF-9F16-47A6-A08E-9253970D03BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
