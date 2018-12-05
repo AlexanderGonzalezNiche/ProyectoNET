@@ -10,6 +10,12 @@ namespace Torneo_Clases.Logicia
     {
         static void Main(string[] args)
         {
+            // Test servicio temperatura
+            var ws = new ServicioClima.TempServ();
+
+            Double temp = ws.darTemperatura("Montevideo");
+            Console.WriteLine(temp);
+            Console.ReadLine();
         }
     }
 }
