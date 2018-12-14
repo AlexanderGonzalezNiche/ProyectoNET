@@ -6,7 +6,7 @@ namespace Torneo_Clases.Value_Objects
 {
     [Serializable]
     [DataContract]
-    public class VOEqupo
+    public class VOEquipo
     {
         [DataMember]
         public int Id { get; set; }
@@ -15,11 +15,11 @@ namespace Torneo_Clases.Value_Objects
         public string Ciudad { get; set; }
         public string DT { get; set; }
 
-        public VOEqupo()
+        public VOEquipo()
         {
-
         }
-        public VOEqupo(Equipo equipo)
+
+        public VOEquipo(Equipo equipo)
         {
             this.Id = equipo.Id;
             this.Nombre = equipo.Nombre;

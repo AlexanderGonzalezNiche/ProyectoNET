@@ -48,10 +48,19 @@ namespace Torneo_Clases.Acceso_Datos
 
         internal static string ObtenerResultadoPorPartido(int idPartido)
         {
-            return "SELECT IDPartido, GolesEquipo1, GolesEquipo2, Clima, Descripcion FROM Resultados WHERE IDPartido = " + idPartido.ToString() + ";";
+            return "SELECT IDPartido, GolesEquipo1, GolesEquipo2, Clima, Descripcion FROM Resultados WHERE IdPartido = " + idPartido.ToString() + ";";
         }
+        
+        internal static string AgregarResultadoAPartido(int idPartido)
+        {
+            return "UPDATE Resultado SET IdResultado = @IdResultado, GolesEquipo1 = @GolesEquipo1, GolesEquipo2 = @GolesEquipo2, Clima = @Clima, Descripcion = @Descripcion WHERE IdPartido = "+ idPartido.ToString() + "; ";
+        }
+        //PARTIDO
 
-        //PARTIDOS
+        internal static string AltaPartido()
+        {
+            return "INSERT INTO Partidos(IDPartido, Equipo1, Equipo2, Estadio, Juez, Fecha) VALUES (@IDPartido, @Equipo1, @Equipo2, @Estadio, @Juez, @Fecha)";
+        }
 
         internal static string DevolverPartidos()
         {
@@ -61,6 +70,43 @@ namespace Torneo_Clases.Acceso_Datos
         internal static string ObtenerPartidoPorID(int idPartido)
         {
             return "SELECT IDPartido, IdEquipo1, IdEquipo2, Estadio, Juez, Fecha FROM Partidos WHERE IDPartido = " + idPartido.ToString() + ";";
+        }
+
+        internal static string ObtenerPartidosDeFecha(DateTime fecha)
+        {
+            return "SELECT IDPartido, IdEquipo1, IdEquipo2, Estadio, Juez, Fecha FROM Partidos WHERE Fecha = " + fecha.ToShortDateString() + ";";
+        }
+
+        internal static string ObtenerPartidosDeEquipo(string idEquipo)
+        {
+            return "SELECT IDPartido, IdEquipo1, IdEquipo2, Estadio, Juez, Fecha FROM Partidos WHERE IdEquipo1 = " + idEquipo + " OR idEquipo2 = " + idEquipo + ";";
+        }
+
+        internal static string ObtenerPartidosDeEquipoEnFecha(string idEquipo, DateTime fecha)
+        {
+            return "SELECT IDPartido, IdEquipo1, IdEquipo2, Estadio, Juez, Fecha FROM Partidos WHERE Fecha = " + fecha.ToShortDateString() + " AND  IdEquipo1 = " + idEquipo + " OR idEquipo2 = " + idEquipo + ";";
+        }
+
+        internal static string ModificarPartido()
+        {
+            return "UPDATE Partidos SET Usuario= @NickName, Password =  Password, Nombre = @Nombre, Apellido = @Apellido, Cedula = @Cedula, Direccion = @Direccion, IdPerfil = @IdPerfil WHERE Usuario = @NickNameAnterior;";
+
+        }
+
+        internal static string EliminarPartido()
+        {
+            return "DELETE FROM Partiidos WHERE IdPartido = @idPartido;";
+        }
+
+        //TORNEO
+        internal static string DevolverTorneos()
+        {
+            return "SELECT IDTorneo, Nombre, Fecha FROM Torneos;";
+        }
+
+        internal static string AltaTorneo()
+        {
+            return "INSERT INTO Torneos(IDTorneo, Nombre, Fecha)";//TODO: Falta la lista de equipos y partidos
         }
     }
 }

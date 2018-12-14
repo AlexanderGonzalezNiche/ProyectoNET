@@ -54,7 +54,9 @@
     <Compile Include="Acceso Datos\DAOEquipos.cs" />
     <Compile Include="Acceso Datos\DAOPartidos.cs" />
     <Compile Include="Acceso Datos\DAOResultados.cs" />
+    <Compile Include="Acceso Datos\DAOTorneo.cs" />
     <Compile Include="Acceso Datos\DAOUsuarios.cs" />
+    <Compile Include="Fachada.cs" />
     <Compile Include="Logica\Equipo.cs" />
     <Compile Include="Logica\Partido.cs" />
     <Compile Include="Logica\Program.cs" />
@@ -68,7 +70,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Value Objects\VOEquipo.cs" />
-    <Compile Include="Value Objects\VOEquipo1.cs" />
     <Compile Include="Value Objects\VOPartido.cs" />
     <Compile Include="Value Objects\VOResultado.cs" />
     <Compile Include="Value Objects\VOTorneo.cs" />

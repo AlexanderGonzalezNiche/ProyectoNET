@@ -9,6 +9,7 @@ namespace Torneo_Clases.Value_Objects
     public class VOResultado
     {
         [DataMember]
+        public int Id { get; set; }
         public VOPartido Partido { get; set; }
         public int GolesEquipo1 { get; set; }
         public int GolesEquipo2 { get; set; }
@@ -22,6 +23,7 @@ namespace Torneo_Clases.Value_Objects
 
         public VOResultado(Resultado res)
         {
+            this.Id = res.Id;
             this.Partido = new VOPartido(res.Partido);
             this.GolesEquipo1 = res.GolesEquipo1;
             this.GolesEquipo2 = res.GolesEquipo2;

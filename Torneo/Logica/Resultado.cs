@@ -8,6 +8,7 @@ namespace Torneo_Clases.Logicia
 {
     public class Resultado
     {
+        public int Id { get; set; }
         public Partido Partido { get; set; }
         public int GolesEquipo1 { get; set; }
         public int GolesEquipo2 { get; set; }
