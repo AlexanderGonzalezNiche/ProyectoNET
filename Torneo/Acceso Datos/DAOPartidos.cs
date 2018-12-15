@@ -46,7 +46,7 @@ namespace Torneo_Clases.Acceso_Datos
             }
             finally
             {
-                myReader.Close();
+               // myReader.Close();
                 myConnection.Close();
             }
         }

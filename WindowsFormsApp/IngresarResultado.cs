@@ -26,6 +26,7 @@ namespace WindowsFormsApp
 
         private void IngresarResultado_Load(object sender, EventArgs e)
         {
+            //Muestro datos
             Fac = new Fachada();
             dataGridView1.DataSource = Fac.DevolverPartidos();
         }
