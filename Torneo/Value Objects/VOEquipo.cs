@@ -14,6 +14,7 @@ namespace Torneo_Clases.Value_Objects
         public string Nombre { get; set; }
         public string Ciudad { get; set; }
         public string DT { get; set; }
+        public int Puntos { get; set; }
 
         public VOEquipo()
         {
@@ -23,6 +24,9 @@ namespace Torneo_Clases.Value_Objects
         {
             this.Id = equipo.Id;
             this.Nombre = equipo.Nombre;
+            this.Ciudad = equipo.Ciudad;
+            this.DT = equipo.DT;
+            this.Puntos = 0;
         }
 
         public override string ToString()

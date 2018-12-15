@@ -103,7 +103,7 @@ namespace Torneo_Clases.Acceso_Datos
                 string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
                 myConnection = new SqlConnection(connectionString);
                 myCommand = new SqlCommand(Consultas.AltaPartido(), myConnection);
-                myCommand.Parameters.AddWithValue("@IdPartifo", idPart);
+                myCommand.Parameters.AddWithValue("@IdPartido", idPart);
                 myCommand.Parameters.AddWithValue("@IdTorneo", idTorneo);
                 myCommand.Parameters.AddWithValue("@Equipo1", idEq1);
                 myCommand.Parameters.AddWithValue("@Equipo2", idEq2);

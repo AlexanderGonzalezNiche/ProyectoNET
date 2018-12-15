@@ -48,6 +48,38 @@ namespace Torneo_Clases.Acceso_Datos
             }
         }
 
+
+       
+        internal static bool AltaEquipo(int idEqu, string nombre, string ciudad, string DT, int puntos)
+        {
+            bool vSalida = true;
+            SqlConnection myConnection = null;
+            SqlCommand myCommand = null;
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+                myConnection = new SqlConnection(connectionString);
+                myCommand = new SqlCommand(Consultas.AltaEquipo(), myConnection);
+                myCommand.Parameters.AddWithValue("@IdEquipo", idEqu);
+                myCommand.Parameters.AddWithValue("@Nombre", nombre);
+                myCommand.Parameters.AddWithValue("@Ciudad", ciudad);
+                myCommand.Parameters.AddWithValue("@DT", DT);
+                myCommand.Parameters.AddWithValue("@Puntos", puntos);
+
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                vSalida = false;
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+            return vSalida;
+        }
+
         public static Equipo ObtenerEquipoPorID(int idEquipo)
         {
             Equipo unEquipo = new Equipo();

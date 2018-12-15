@@ -29,6 +29,11 @@ namespace Torneo_Clases.Acceso_Datos
         }
 
         //EQUIPOS
+        internal static string AltaEquipo()
+        {
+            return "INSERT INTO Equipos(IdEquipo, Nombre, Ciudad, DT, Puntos) VALUES (@IdEquipo, @Nombre, @Ciudad, @DT, @Puntos);";
+        }
+        
         internal static string DevolverEquipos()
         {
             return "SELECT Id, Nombre, Ciudad, DT FROM Equipos;";

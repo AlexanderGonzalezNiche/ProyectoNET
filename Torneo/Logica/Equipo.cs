@@ -12,5 +12,6 @@ namespace Torneo_Clases.Logicia
         public string Nombre { get; set; }
         public string Ciudad { get; set; }
         public string DT { get; set; }
+        public int Puntos { get; set; }
     }
 }

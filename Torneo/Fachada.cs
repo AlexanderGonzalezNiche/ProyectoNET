@@ -75,13 +75,28 @@ namespace Torneo_Clases
             }
             return listaVOPartidos;
         }
+        //Altas
+        //Alta  Equipo
+        public bool AltaEquipo(VOEquipo eq)
+        {
+            return DAOEquipos.AltaEquipo(eq.Id, eq.Nombre, eq.Ciudad, eq.DT, eq.Puntos);
 
-        //Ingresar partido
+
+        }
+       
+        //Alta partido
         public bool AltaPartido(VOPartido part)
         {
             return DAOPartidos.AltaPartido(part.Id, part.IdTorneo, part.Equipo1.Id, part.Equipo2.Id, part.Estadio, part.Juez, part.Fecha, part.Resultado.Id);
         }
 
+        //Alta torneo
+        public bool AltaTorneo(VOTorneo torneo)
+        {
+            return DAOTorneo.AltaTorneo(torneo.Id, torneo.Nombre, torneo.Fecha);
+        }
+
+        //Ingresar resultado a partido
         public bool AgregarResultadoAPartido(VOResultado res, int idPartido)
         {
             return DAOResultados.InsertarResultadoDePartido(idPartido, res.Id, res.GolesEquipo1, res.GolesEquipo2, res.Clima, res.Descripcion);
@@ -133,11 +148,9 @@ namespace Torneo_Clases
             return partidoRetorno;
         }
 
-        //Alta torneo
-        public bool AltaTorneo(VOTorneo torneo)
-        {
-            return DAOTorneo.AltaTorneo(torneo.Id, torneo.Nombre, torneo.Fecha);
-        }
+        
+
+        
 
         //Listar datos del torneo
         //ingresar datos de tabla de posiciones
