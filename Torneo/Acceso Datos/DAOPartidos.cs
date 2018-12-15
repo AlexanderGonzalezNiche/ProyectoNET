@@ -93,7 +93,7 @@ namespace Torneo_Clases.Acceso_Datos
         }
 
 
-        internal static bool AltaPartido(int idEq1, int idEq2, string estadio, string juez, DateTime fecha, int idRes)
+        internal static bool AltaPartido(int idPart, int idTorneo, int idEq1, int idEq2, string estadio, string juez, DateTime fecha, int idRes)
         {
             bool vSalida = true;
             SqlConnection myConnection = null;
@@ -103,6 +103,8 @@ namespace Torneo_Clases.Acceso_Datos
                 string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
                 myConnection = new SqlConnection(connectionString);
                 myCommand = new SqlCommand(Consultas.AltaPartido(), myConnection);
+                myCommand.Parameters.AddWithValue("@IdPartifo", idPart);
+                myCommand.Parameters.AddWithValue("@IdTorneo", idTorneo);
                 myCommand.Parameters.AddWithValue("@Equipo1", idEq1);
                 myCommand.Parameters.AddWithValue("@Equipo2", idEq2);
                 myCommand.Parameters.AddWithValue("@Estadio", estadio);

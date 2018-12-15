@@ -49,12 +49,7 @@ namespace Torneo_Clases.Acceso_Datos
                 myConnection.Close();
             }
         }
-        /*public int Id { get; set; }
-        public Partido Partido { get; set; }
-        public int GolesEquipo1 { get; set; }
-        public int GolesEquipo2 { get; set; }
-        public string Clima { get; set; }
-        public string Descripcion { get; set; }v*/
+
         internal static bool InsertarResultadoDePartido(int idPartido, int idResultado, int golesEq1, int golesEq2, string clima, string desc)
         {
             bool vSalida = true;
@@ -66,11 +61,11 @@ namespace Torneo_Clases.Acceso_Datos
                 myConnection = new SqlConnection(connectionString);
                 myConnection.Open();
                 myCommand = new SqlCommand(Consultas.AgregarResultadoAPartido(idPartido), myConnection);
-                 myCommand.Parameters.AddWithValue("@IdResultado", idResultado);
+                myCommand.Parameters.AddWithValue("@IdResultado", idResultado);
                 myCommand.Parameters.AddWithValue("@GolesEquipo1", golesEq1);
                 myCommand.Parameters.AddWithValue("@GolesEquipo2", golesEq2);
-                myCommand.Parameters.AddWithValue("@Clima", clima);
-                myCommand.Parameters.AddWithValue("@Descripciooon", desc);
+                myCommand.Parameters.AddWithValue("@Clima", clima == null ? String.Empty : clima);
+                myCommand.Parameters.AddWithValue("@Descripcion", desc == null ? String.Empty : desc);
 
                 myCommand.ExecuteNonQuery();
             }

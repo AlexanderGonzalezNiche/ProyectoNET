@@ -11,6 +11,7 @@ namespace Torneo_Clases.Value_Objects
         [DataMember]
         public int Id { get; set; }
         [DataMember]
+        public int IdTorneo { get; set; }
         public VOEquipo Equipo1 { get; set; }
         public VOEquipo Equipo2 { get; set; }
         public string Estadio { get; set; }

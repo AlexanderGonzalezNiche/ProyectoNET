@@ -59,7 +59,7 @@ namespace Torneo_Clases.Acceso_Datos
 
         internal static string AltaPartido()
         {
-            return "INSERT INTO Partidos(IDPartido, Equipo1, Equipo2, Estadio, Juez, Fecha) VALUES (@IDPartido, @Equipo1, @Equipo2, @Estadio, @Juez, @Fecha)";
+            return "INSERT INTO Partidos(IDPartido, IDTorneo, Equipo1, Equipo2, Estadio, Juez, Fecha) VALUES (@IDPartido, @Equipo1, @Equipo2, @Estadio, @Juez, @Fecha)";
         }
 
         internal static string DevolverPartidos()

@@ -75,10 +75,11 @@ namespace Torneo_Clases
             }
             return listaVOPartidos;
         }
+
         //Ingresar partido
         public bool AltaPartido(VOPartido part)
         {
-            return DAOPartidos.AltaPartido(part.Equipo1.Id, part.Equipo2.Id, part.Estadio, part.Juez, part.Fecha, part.Resultado.Id);
+            return DAOPartidos.AltaPartido(part.Id, part.IdTorneo, part.Equipo1.Id, part.Equipo2.Id, part.Estadio, part.Juez, part.Fecha, part.Resultado.Id);
         }
 
         public bool AgregarResultadoAPartido(VOResultado res, int idPartido)
