@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Torneo_Clases.Logicia
+namespace Torneo_Clases.Logica
 {
     public class Partido
     {

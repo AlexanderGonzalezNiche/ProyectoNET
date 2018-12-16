@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Torneo_Clases.Logicia;
+using Torneo_Clases.Logica;
 
 namespace Torneo_Clases.Acceso_Datos
 {

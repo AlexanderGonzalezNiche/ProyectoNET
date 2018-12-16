@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Torneo_Clases.Logicia;
+using Torneo_Clases.Logica;
 
 namespace Torneo_Clases.Value_Objects
 {

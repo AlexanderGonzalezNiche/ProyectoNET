@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Torneo_Clases.Logicia
+namespace Torneo_Clases.Logica
 {
     class Program
     {

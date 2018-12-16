@@ -1,7 +1,7 @@
 ﻿using System;
 using Torneo_Clases.Value_Objects;
 using Torneo_Clases.Acceso_Datos;
-using Torneo_Clases.Logicia;
+using Torneo_Clases.Logica;
 using System.Collections.Generic;
 
 using System.Linq;
@@ -92,7 +92,7 @@ namespace Torneo_Clases
 
         //Alta torneo
         public bool AltaTorneo(VOTorneo torneo)
-        {
+        {   
             return DAOTorneo.AltaTorneo(torneo.Id, torneo.Nombre, torneo.Fecha);
         }
 

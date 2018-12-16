@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Collections.Generic;
-using Torneo_Clases.Logicia;
+using Torneo_Clases.Logica;
 
 namespace Torneo_Clases.Acceso_Datos
 {
