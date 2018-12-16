@@ -157,7 +157,17 @@ namespace Torneo_Clases
         //estadistiad de la fecha
 
         //clima 
+        public string DevolverClimaPorCiudad(String ciudad)
+        {
+            var ws = new servicioWebClima.WebServiceClima();
 
+            double temp = ws.darTemperatura(ciudad);
+            double velViento = ws.darVelocidadViento(ciudad);
+            string nubocidad = ws.darNubosidad(ciudad);
+
+            string clima = "El clima estaba: " + nubocidad + " temperatura " + temp + " velocidad del viento " + velViento;
+            return clima;
+        }
 
     }
 }

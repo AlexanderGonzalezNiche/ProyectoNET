@@ -11,10 +11,14 @@ namespace Torneo_Clases.Logica
         static void Main(string[] args)
         {
             // Test servicio temperatura
-            var ws = new ServicioClima.TempServ();
+            var ws = new servicioWebClima.WebServiceClima();
+            string ciudad = "Colonia";
+            double temp = ws.darTemperatura(ciudad);
+            double velViento = ws.darVelocidadViento(ciudad);
+            string nubocidad = ws.darNubosidad(ciudad);
 
-            Double temp = ws.darTemperatura("Montevideo");
-            Console.WriteLine(temp);
+            string clima = "El clima estaba: " + nubocidad + " temperatura " + temp + " velocidad del viento " + velViento;
+            Console.WriteLine(clima);
             Console.ReadLine();
         }
     }
