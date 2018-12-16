@@ -67,7 +67,7 @@ namespace Torneo_Clases
         {
             List<VOPartido> listaVOPartidos = new List<VOPartido>();
             DAOPartidos daoPartidos = new DAOPartidos();
-            List<Partido> listaPartidos = daoPartidos.listaPartidos;
+            List<Partido> listaPartidos = daoPartidos.listaPartidos ;
             foreach(Partido part in listaPartidos)
             {
                 VOPartido voPart = new VOPartido(part);

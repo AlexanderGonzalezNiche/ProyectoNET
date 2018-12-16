@@ -9,6 +9,7 @@ namespace Torneo_Clases.Acceso_Datos
     public class DAOPartidos
     {
         public List<Partido> listaPartidos { get; set; }
+       
         public DAOPartidos()
         {
             listaPartidos = new List<Partido>();
@@ -27,7 +28,7 @@ namespace Torneo_Clases.Acceso_Datos
                     while (myReader.Read())
                     {
                         Partido part = new Partido();
-                        part.Id = myReader.GetInt32(0);
+                        part.Id =myReader.GetInt32(0);
                         part.Equipo1 = DAOEquipos.ObtenerEquipoPorID(myReader.GetInt32(1));
                         part.Equipo2 = DAOEquipos.ObtenerEquipoPorID(myReader.GetInt32(2));
                         part.Estadio = myReader.GetString(3);
