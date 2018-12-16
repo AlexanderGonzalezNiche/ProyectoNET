@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="darTemperatura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="darTemperaturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="darTemperaturaResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="darNubosidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="darNubosidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="darNubosidadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="darVelocidadViento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="darVelocidadVientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="darVelocidadVientoResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="darTemperaturaSoapIn">
+    <wsdl:part name="parameters" element="tns:darTemperatura" />
+  </wsdl:message>
+  <wsdl:message name="darTemperaturaSoapOut">
+    <wsdl:part name="parameters" element="tns:darTemperaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="darNubosidadSoapIn">
+    <wsdl:part name="parameters" element="tns:darNubosidad" />
+  </wsdl:message>
+  <wsdl:message name="darNubosidadSoapOut">
+    <wsdl:part name="parameters" element="tns:darNubosidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="darVelocidadVientoSoapIn">
+    <wsdl:part name="parameters" element="tns:darVelocidadViento" />
+  </wsdl:message>
+  <wsdl:message name="darVelocidadVientoSoapOut">
+    <wsdl:part name="parameters" element="tns:darVelocidadVientoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceClimaSoap">
+    <wsdl:operation name="darTemperatura">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para dar la temperatura de una ciudad</wsdl:documentation>
+      <wsdl:input message="tns:darTemperaturaSoapIn" />
+      <wsdl:output message="tns:darTemperaturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="darNubosidad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para dar nubocidad de una ciudad</wsdl:documentation>
+      <wsdl:input message="tns:darNubosidadSoapIn" />
+      <wsdl:output message="tns:darNubosidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="darVelocidadViento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Servicio para dar los km/h viento de una ciudad</wsdl:documentation>
+      <wsdl:input message="tns:darVelocidadVientoSoapIn" />
+      <wsdl:output message="tns:darVelocidadVientoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceClimaSoap" type="tns:WebServiceClimaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="darTemperatura">
+      <soap:operation soapAction="http://tempuri.org/darTemperatura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="darNubosidad">
+      <soap:operation soapAction="http://tempuri.org/darNubosidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="darVelocidadViento">
+      <soap:operation soapAction="http://tempuri.org/darVelocidadViento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceClimaSoap12" type="tns:WebServiceClimaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="darTemperatura">
+      <soap12:operation soapAction="http://tempuri.org/darTemperatura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="darNubosidad">
+      <soap12:operation soapAction="http://tempuri.org/darNubosidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="darVelocidadViento">
+      <soap12:operation soapAction="http://tempuri.org/darVelocidadViento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceClima">
+    <wsdl:port name="WebServiceClimaSoap" binding="tns:WebServiceClimaSoap">
+      <soap:address location="http://localhost:51158/WebServiceClima.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceClimaSoap12" binding="tns:WebServiceClimaSoap12">
+      <soap12:address location="http://localhost:51158/WebServiceClima.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -26,20 +26,10 @@ namespace Torneo_Clases.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:58599/TempServ.asmx")]
-        public string Torneo_servicioTemperatura_TempServ {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:51158/WebServiceClima.asmx")]
+        public string Torneo_Clases_servicioWebClima_WebServiceClima {
             get {
-                return ((string)(this["Torneo_servicioTemperatura_TempServ"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:58599/TempServ.asmx")]
-        public string Torneo_Clases_ServicioTemperatura1_TempServ {
-            get {
-                return ((string)(this["Torneo_Clases_ServicioTemperatura1_TempServ"]));
+                return ((string)(this["Torneo_Clases_servicioWebClima_WebServiceClima"]));
             }
         }
     }

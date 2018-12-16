@@ -2,11 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Torneo_Clases.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Torneo_servicioTemperatura_TempServ" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:58599/TempServ.asmx</Value>
-    </Setting>
-    <Setting Name="Torneo_Clases_ServicioTemperatura1_TempServ" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:58599/TempServ.asmx</Value>
+    <Setting Name="Torneo_Clases_servicioWebClima_WebServiceClima" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:51158/WebServiceClima.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>
