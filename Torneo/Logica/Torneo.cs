@@ -9,20 +9,20 @@ namespace Torneo_Clases.Logica
 {
     public class Torneo
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Nombre { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Año { get; set; }
         public DAOEquipos Equipos { get; set; }
         public DAOPartidos Partidos { get; set; }
         public Torneo()
         {
 
         }
-        public Torneo(int id,String nombre,DateTime fecha)
+        public Torneo(string id,String nombre, string año)
         {
             this.Id = id;
             this.Nombre = nombre;
-            this.Fecha = fecha;
+            this.Año = año;
         }
     }
 }

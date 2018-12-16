@@ -10,9 +10,9 @@ namespace Torneo_Clases.Value_Objects
     public class VOTorneo
     {
         [DataMember]
-        public int Id { get; set; }
-        public String Nombre { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Id { get; set; }
+        public string Nombre { get; set; }
+        public string Año { get; set; }
         public List<VOEquipo> Equipos { get; set; }
         public List<VOPartido> Partidos { get; set; }
 
@@ -24,7 +24,7 @@ namespace Torneo_Clases.Value_Objects
         {
             this.Id = torneo.Id;
             this.Nombre = torneo.Nombre;
-            this.Fecha = torneo.Fecha;
+            this.Año = torneo.Año;
         }
 
     }

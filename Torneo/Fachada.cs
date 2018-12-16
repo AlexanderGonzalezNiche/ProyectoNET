@@ -93,7 +93,7 @@ namespace Torneo_Clases
         //Alta torneo
         public bool AltaTorneo(VOTorneo torneo)
         {   
-            return DAOTorneo.AltaTorneo(torneo.Id, torneo.Nombre, torneo.Fecha);
+            return DAOTorneo.AltaTorneo(torneo.Id, torneo.Nombre, torneo.Año);
         }
 
         //Ingresar resultado a partido
