@@ -37,6 +37,7 @@
             this.ingresarPartidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarResultadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablaDePisicionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.treminarTorneoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.iniciarTorneoToolStripMenuItem,
             this.ingresarDatosDelTorneoToolStripMenuItem,
-            this.tablaDePisicionesToolStripMenuItem});
+            this.tablaDePisicionesToolStripMenuItem,
+            this.treminarTorneoToolStripMenuItem});
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.inicioToolStripMenuItem.Text = "Torneo";
@@ -105,6 +107,13 @@
             this.tablaDePisicionesToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.tablaDePisicionesToolStripMenuItem.Text = "Tabla de posiciones";
             // 
+            // treminarTorneoToolStripMenuItem
+            // 
+            this.treminarTorneoToolStripMenuItem.Name = "treminarTorneoToolStripMenuItem";
+            this.treminarTorneoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.treminarTorneoToolStripMenuItem.Text = "Treminar Torneo";
+            this.treminarTorneoToolStripMenuItem.Click += new System.EventHandler(this.treminarTorneoToolStripMenuItem_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,6 +145,7 @@
         private System.Windows.Forms.ToolStripMenuItem ingresarPartidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tablaDePisicionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarResultadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem treminarTorneoToolStripMenuItem;
     }
 }
 

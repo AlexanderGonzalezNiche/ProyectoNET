@@ -120,5 +120,10 @@ namespace WindowsFormsApp
         {
 
         }
+
+        private void cbxEquipoLocal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -110,12 +110,17 @@ namespace Torneo_Clases.Acceso_Datos
         //TORNEO
         internal static string DevolverTorneos()
         {
-            return "SELECT IDTorneo, Nombre, Fecha FROM Torneos;";
+            return "SELECT IDTorneo, Nombre, Año FROM Torneos;";
         }
 
         internal static string AltaTorneo()
         {
-            return "INSERT INTO Torneos(IDTorneo, Nombre, Fecha)";//TODO: Falta la lista de equipos y partidos
+            return "INSERT INTO Torneos(IDTorneo, Nombre, Año)";
+        }
+        
+        internal static string EliminarTorneo()
+        {
+            return "DELETE * FROM Torneo";
         }
     }
 }

@@ -82,6 +82,66 @@ namespace Torneo_Clases.Acceso_Datos
             return vSalida;
         }
 
+        public static Torneo ObtenerTorneo()
+        {
+            Torneo tor = new Torneo();
+            SqlConnection myConnection = null;
+            SqlCommand myCommand = null;
+            SqlDataReader myReader = null;
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+                myConnection = new SqlConnection(connectionString);
+                myConnection.Open();
+                myCommand = new SqlCommand(Consultas.DevolverTorneos(), myConnection);
+                myReader = myCommand.ExecuteReader();
+                if (myReader.HasRows)
+                {
+                    if (myReader.Read())
+                    {
+                        tor.Id = myReader.GetInt32(0);
+                        tor.Nombre = myReader.GetString(1);
+                        tor.Año = myReader.GetString(2);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Error de consistencia");
+                }
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+            return tor;
+        }
+
+        internal static bool EliminarTorneo()
+        {
+            bool vSalida = true;
+            SqlConnection myConnection = null;
+            SqlCommand myCommand = null;
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+                myConnection = new SqlConnection(connectionString);
+                myConnection.Open();
+                myCommand = new SqlCommand(Consultas.EliminarTorneo(), myConnection);
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                vSalida = false;
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+            return vSalida;
+        }
     }
 }
 

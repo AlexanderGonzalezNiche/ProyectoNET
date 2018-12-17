@@ -93,6 +93,34 @@ namespace Torneo_Clases
             return listaVOPartidos;
         }
 
+        public bool ExisteTorneo()
+        {
+            Torneo tor = new Torneo();
+            bool retorno = false;
+            tor = DAOTorneo.ObtenerTorneo();
+            if (tor.Nombre != null)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
+        public VOTorneo ObtenerTorneo()
+        {
+            if (this.ExisteTorneo())
+            {
+                VOTorneo torneoRetorno = new VOTorneo();
+                DAOTorneo daoTorneo = new DAOTorneo();
+                torneoRetorno = new VOTorneo(DAOTorneo.ObtenerTorneo());
+                return torneoRetorno;
+            }
+            else
+            {
+                return null;
+            }
+         
+        }
+
         public bool ExistePartido(int idPartido)
         {
             Partido part = new Partido();
@@ -122,6 +150,12 @@ namespace Torneo_Clases
         public bool AltaTorneo(VOTorneo torneo)
         {   
             return DAOTorneo.AltaTorneo(torneo.Id, torneo.Nombre, torneo.Año);
+        }
+
+        //Baja torneo 
+        public bool EliminarTorneo()
+        {
+            return DAOTorneo.EliminarTorneo();
         }
 
         //Ingresar resultado a partido

@@ -52,6 +52,7 @@
             this.cbxEquipoLocal.Name = "cbxEquipoLocal";
             this.cbxEquipoLocal.Size = new System.Drawing.Size(243, 21);
             this.cbxEquipoLocal.TabIndex = 3;
+            this.cbxEquipoLocal.SelectedIndexChanged += new System.EventHandler(this.cbxEquipoLocal_SelectedIndexChanged);
             // 
             // cbxEquipoVisitante
             // 

@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Torneo_Clases;
+using Torneo_Clases.Value_Objects;
 using WindowsFormsApp;
 
 namespace WindowsFormsApp1
 {
     public partial class VentanaPrincipal : Form
     {
+        Fachada fac = new Fachada();
+        VOTorneo tor;
         public AgregarTorneo vtnTorneo;
         public AgregarEquipo vtnEquipo;
         public IngresarPartido vtnPartido;
@@ -21,11 +25,26 @@ namespace WindowsFormsApp1
         public VentanaPrincipal()
         {
             InitializeComponent();
+            ObtenerTorneoActivo();
         }
 
+        private void ObtenerTorneoActivo()
+        {
+            this.tor = fac.ObtenerTorneo();
+
+        }
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
-
+            if (this.tor == null)
+            {
+                this.ingresarDatosDelTorneoToolStripMenuItem.Available = false;
+                this.tablaDePisicionesToolStripMenuItem.Available = false;
+            }
+            else
+            {
+                this.ingresarDatosDelTorneoToolStripMenuItem.Available = true;
+                this.tablaDePisicionesToolStripMenuItem.Available = true;
+            }
         }
 
         private void iniciarTorneoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,5 +164,18 @@ namespace WindowsFormsApp1
             vtnResultado = null;
         }
 
+        private void treminarTorneoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.tor = null;
+            bool eliminado = fac.EliminarTorneo();
+            if (eliminado)
+            {
+                MessageBox.Show("Torneo Finalizado", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al finalizar el torneo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
