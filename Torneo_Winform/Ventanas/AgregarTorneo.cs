@@ -30,7 +30,7 @@ namespace WindowsFormsApp
                 if (this.torneo == null)//ALTA
                 {
                     this.torneo = new VOTorneo();
-                    this.torneo.Id = this.textBoxID.Text;
+                    this.torneo.Id = int.Parse(this.textBoxID.Text);
                     this.torneo.Nombre = this.textBoxNombre.Text;
                     this.torneo.Año = this.textBoxAño.Text;
                     bool alta = fac.AltaTorneo(this.torneo);

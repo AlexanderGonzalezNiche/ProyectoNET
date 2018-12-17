@@ -43,13 +43,12 @@ namespace Torneo_Clases.Acceso_Datos
             }
             finally
             {
-                myReader.Close();
                 myConnection.Close();
             }
         }
 
 
-       
+
         internal static bool AltaEquipo(int idEqu, string nombre, string ciudad, string DT, int puntos)
         {
             bool vSalida = true;
@@ -118,5 +117,31 @@ namespace Torneo_Clases.Acceso_Datos
             }
             return unEquipo;
         }
+
+        internal static bool EliminarEquipo(int idEquipo)
+        {
+            bool vSalida = true;
+            SqlConnection myConnection = null;
+            SqlCommand myCommand = null;
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+                myConnection = new SqlConnection(connectionString);
+                myConnection.Open();
+                myCommand = new SqlCommand(Consultas.EliminarEquipo(), myConnection);
+                myCommand.Parameters.AddWithValue("@IdEquipo", idEquipo);
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                vSalida = false;
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+            return vSalida;
+        }
     }
 }
+

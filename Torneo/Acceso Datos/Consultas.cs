@@ -44,6 +44,10 @@ namespace Torneo_Clases.Acceso_Datos
             return "SELECT Id, Nombre, Ciudad, DT FROM Equipos WHERE Id = " + idEquipo.ToString() + ";";
         }
 
+        internal static string EliminarEquipo()
+        {
+            return "DELETE FROM Equipos WHERE IdEquipo = @idEquipo;";
+        }
         //RESULTADOS
 
         internal static string DevolverResultados()
@@ -100,7 +104,7 @@ namespace Torneo_Clases.Acceso_Datos
 
         internal static string EliminarPartido()
         {
-            return "DELETE FROM Partiidos WHERE IdPartido = @idPartido;";
+            return "DELETE FROM Partidos WHERE IdPartido = @idPartido;";
         }
 
         //TORNEO

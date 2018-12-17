@@ -33,7 +33,7 @@ namespace Torneo_Clases.Acceso_Datos
                     while (myReader.Read())
                     {
                         Torneo tor = new Torneo();
-                        tor.Id = myReader.GetString(0);
+                        tor.Id = myReader.GetInt32(0);
                         tor.Nombre = myReader.GetString(1);
                         tor.Año = myReader.GetString(2);
                         //TODO:Faltan las lista de torneo y equipos        
@@ -55,7 +55,7 @@ namespace Torneo_Clases.Acceso_Datos
 
         }
 
-        internal static bool AltaTorneo(string idTor, string nombreTor, string fecha)
+        internal static bool AltaTorneo(int idTor, string nombreTor, string fecha)
         {
             bool vSalida = true;
             SqlConnection myConnection = null;

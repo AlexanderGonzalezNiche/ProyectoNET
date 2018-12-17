@@ -10,7 +10,7 @@ namespace Torneo_Clases.Value_Objects
     public class VOTorneo
     {
         [DataMember]
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Año { get; set; }
         public List<VOEquipo> Equipos { get; set; }

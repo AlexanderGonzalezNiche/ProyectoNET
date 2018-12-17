@@ -50,6 +50,18 @@ namespace Torneo_Clases
             return DAOUsuarios.ExisteUsuario(nombUsu);
         }
 
+        public bool ExisteEquipo(int idEquipo)
+        {
+            Equipo eq = new Equipo();
+            bool retorno = false;
+            eq = DAOEquipos.ObtenerEquipoPorID(idEquipo);
+            if (eq != null)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
         public List<VOEquipo> DevolverEquipos()
         {
             List<VOEquipo> listaVOEquipos = new List<VOEquipo>();
@@ -61,6 +73,11 @@ namespace Torneo_Clases
                 listaVOEquipos.Add(voEq);
             }
             return listaVOEquipos;
+        }
+
+        public bool EliminarEquipo(VOEquipo unEquipo)
+        {
+            return DAOEquipos.EliminarEquipo(unEquipo.Id);
         }
 
         public List<VOPartido> DevolverPartidos()
@@ -75,13 +92,24 @@ namespace Torneo_Clases
             }
             return listaVOPartidos;
         }
+
+        public bool ExistePartido(int idPartido)
+        {
+            Partido part = new Partido();
+            bool retorno = false;
+            part = DAOPartidos.ObtenerPartidoPorID(idPartido);
+           if (part != null)
+            {
+                retorno = true;
+            }
+            return retorno;
+        }
+
         //Altas
         //Alta  Equipo
         public bool AltaEquipo(VOEquipo eq)
         {
             return DAOEquipos.AltaEquipo(eq.Id, eq.Nombre, eq.Ciudad, eq.DT, eq.Puntos);
-
-
         }
        
         //Alta partido

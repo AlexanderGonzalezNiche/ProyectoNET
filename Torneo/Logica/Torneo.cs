@@ -9,7 +9,7 @@ namespace Torneo_Clases.Logica
 {
     public class Torneo
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Año { get; set; }
         public DAOEquipos Equipos { get; set; }
@@ -18,7 +18,7 @@ namespace Torneo_Clases.Logica
         {
 
         }
-        public Torneo(string id,String nombre, string año)
+        public Torneo(int id,String nombre, string año)
         {
             this.Id = id;
             this.Nombre = nombre;
